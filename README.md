@@ -26,4 +26,5 @@ An intelligent web app that analyzes your resume against a job description using
 1. Clone the repo:
    ```bash
    git clone https://github.com/viveknagar882716/ai_resume_analyzer.git
+
    cd ai_resume_analyzer
