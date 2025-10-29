@@ -1,7 +1,7 @@
-# resume_parser.py (FIXED - Supports PDF & DOCX)
+# resume_parser.py 
 import re
 import PyPDF2
-from docx import Document  # ← NEW: For DOCX files
+from docx import Document  
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -66,4 +66,5 @@ def find_missing_skills(resume_skills, job_desc):
     for skill in SKILLS_DB:
         if skill in job_lower and skill not in resume_skills:
             missing.append(skill)
+
     return missing
