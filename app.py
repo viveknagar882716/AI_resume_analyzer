@@ -1,4 +1,4 @@
-# app.py (with SQLite - FIXED VERSION)
+
 import os
 import sqlite3
 from flask import Flask, request, jsonify, session, send_from_directory
@@ -139,11 +139,12 @@ def analyze():
         app.logger.error(f"Analysis error: {str(e)}")
         return jsonify({"error": f"Analysis failed: {str(e)}"}), 500
 
-# Serve static files (including images like pic.png)
+# Serve static files
 @app.route('/static/<path:filename>')
 def static_files(filename):
     return send_from_directory(app.static_folder, filename)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
+
     app.run(debug=os.environ.get('FLASK_ENV') != 'production', host='0.0.0.0', port=port)
